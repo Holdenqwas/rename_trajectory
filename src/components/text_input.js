@@ -1,8 +1,15 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 export const ValidationTextFields = () => {
+  const [term, setTerm] = useState('Drilled trajectory');
+
+  const handleChange = (e) => {
+    const term = e.target.value;
+    setTerm(term); 
+  };
+
   return (
     <Box
       component="form"
@@ -14,11 +21,12 @@ export const ValidationTextFields = () => {
     >
       <div>
         <TextField
-
           id="outlined-error-helper-text"
           label="Новая траектория"
-          defaultValue=""
-          helperText="Название не может быть пустым"
+          value={term}
+          onChange={handleChange}
+          error={!Boolean(...term)}
+          helperText={term ? "" : "Новое название не может быть пустым"}
         />
       </div>
     </Box>
