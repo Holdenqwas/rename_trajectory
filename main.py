@@ -2,8 +2,7 @@ import roxar.rms
 
 
 def run(config):
-    #ui_params = config['connection_response_object']
-    #ui_selection = config['plugin_data']
+	print(config)
 	trj_name = config['trj_name']
 	new_name = config['new_name']
 
@@ -20,6 +19,7 @@ def run(config):
 		roxar.rms.info(f'Number of renamed trajectories: {count}')
 
 	if trj_name and new_name:
-		rename_trj(trj_name, new_name)
+		print('Norm')
+		#rename_trj(trj_name, new_name)
 	else:
 		roxar.rms.error(f'Trajectory name cannot be empty. Please enter the name of the trajectory')

@@ -1,7 +1,7 @@
 import roxar.rms
 
 
-def get_set_trj():
+def get_trj():
 	lst = set()
 	for well in project.wells:
 		for wellbore in well.all_wellbores:

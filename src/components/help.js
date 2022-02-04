@@ -34,14 +34,9 @@ export const Help = ({ open, handleClose }) => {
                         ref={descriptionElementRef}
                         tabIndex={-1}
                     >
-                        {[...new Array(50)]
-              .map(
-                () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-              )
-              .join('\n')}
+                        {`Плагин переименует траектории скважин. Все имеющиеся траектории в модели,
+                        названия подгружаются автоматически, находятся в поле "Исходная траектория".
+                        Выберете необходимую траекторию и введите в поле "Новая траектория" новое название.`}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

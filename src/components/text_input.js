@@ -22,6 +22,8 @@ export const ValidationTextFields = () => {
       <div>
         <TextField
           id="outlined-error-helper-text"
+          data-rms-stored
+          name="new_name"
           label="Новая траектория"
           value={term}
           onChange={handleChange}

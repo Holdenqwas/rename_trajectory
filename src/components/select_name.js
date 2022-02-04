@@ -3,12 +3,18 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import usePromise from 'react-use-promise';
+import proxyRms from './proxyRms';
 
 export const SelectName = () => {
-  const [age, setAge] = React.useState('');
+  const [name, setName] = React.useState('');
+
+  const [response, error] = usePromise(
+    () => proxyRms.uipy.get_trj(),[]
+  );
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setName(event.target.value);
   };
 
   return (
@@ -18,14 +24,18 @@ export const SelectName = () => {
         <Select
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
-          value={age}
+          value={name}
+          data-rms-stored
+          name="trj_name"
           onChange={handleChange}
           autoWidth
           label="Исходная траектория"
         >
-          <MenuItem value={10}>Twenty</MenuItem>
-          <MenuItem value={21}>Twenty one</MenuItem>
-          <MenuItem value={22}>Twenty one and a half</MenuItem>
+          {response.map((name) => {
+            return (
+              <MenuItem value={name}>{name}</MenuItem>
+            )
+          })}
         </Select>
       </FormControl>
     </div>
