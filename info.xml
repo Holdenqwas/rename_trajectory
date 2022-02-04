@@ -1,0 +1,11 @@
+<plugin>
+  <meta name="application-name" content="RMS-RESQML/Geolog Connector" />
+  <meta name="author" content="Roxar Software Solutions" />
+  <meta name="description" content="Import data from PDGM DX server and Geolog Projects" />
+  <meta name="uipy-timeout" content="600000" />
+  <meta name="window-size" content="1400x800" />
+  <meta name="hide-message-pane" content="true"/>
+  <meta name="refresh-after-run" content="false" />
+  <meta name="internal-plugin-interoperability" content="true"/>
+  <meta name="show-idle-dialog-on-run" content="true" />
+</plugin>
